@@ -1,0 +1,104 @@
+Title: C Programming Basics
+Author: John Smith
+ID: 101
+Count: 5
+Price: 499.50
+Status: Available
+
+Title: Introduction to AI
+Author: Jane Doe
+ID: 102
+Count: 3
+Price: 699.99
+Status: Sold
+
+Title: Data Structures
+Author: Robert Martin
+ID: 103
+Count: 8
+Price: 599.00
+Status: Available
+
+Title: Machine Learning 101
+Author: Andrew Ng
+ID: 104
+Count: 4
+Price: 799.00
+Status: Available
+
+Title: Algorithms in C
+Author: Thomas Cormen
+ID: 105
+Count: 6
+Price: 899.99
+Status: Available
+
+Title: Operating System Concepts
+Author: Silberschatz
+ID: 106
+Count: 7
+Price: 999.50
+Status: Available
+
+Title: Computer Networks
+Author: Andrew Tanenbaum
+ID: 107
+Count: 5
+Price: 650.00
+Status: Available
+
+Title: Python for Data Science
+Author: Jake VanderPlas
+ID: 108
+Count: 9
+Price: 749.00
+Status: Available
+
+Title: Deep Learning with Python
+Author: François Chollet
+ID: 109
+Count: 3
+Price: 850.00
+Status: Available
+
+Title: Clean Code
+Author: Robert C. Martin
+ID: 110
+Count: 4
+Price: 559.00
+Status: Available
+
+Title: Artificial Intelligence: A Modern Approach
+Author: Stuart Russell
+ID: 111
+Count: 6
+Price: 1150.00
+Status: Available
+
+Title: Introduction to Algorithms
+Author: Thomas H. Cormen
+ID: 112
+Count: 10
+Price: 1200.00
+Status: Available
+
+Title: Design Patterns
+Author: Erich Gamma
+ID: 113
+Count: 4
+Price: 950.00
+Status: Available
+
+Title: Cryptography and Network Security
+Author: William Stallings
+ID: 114
+Count: 7
+Price: 999.00
+Status: Available
+
+Title: Software Engineering
+Author: Ian Sommerville
+ID: 115
+Count: 5
+Price: 899.00
+Status: Available
