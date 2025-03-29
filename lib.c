@@ -69,9 +69,9 @@ int main()
             displayBook();
             break;
 
-            // case 2:
-            //     addBook();
-            //     break;
+        case 2:
+            addBook();
+            break;
 
             // case 3:
             //     issue_sellBook();
@@ -225,4 +225,109 @@ void displayBook()
         }
 
     } while (choice != 'q' && choice != 'Q');
+}
+
+void addBook()
+{
+    struct book books[MAX];
+    int bookCount = 0;
+    char choice;
+    FILE *file;
+
+    file = fopen("books.txt", "r");
+    if (file != NULL)
+    {
+        while (fscanf(file, "Title: %[^\n]\n", books[bookCount].title) != EOF)
+        {
+            fscanf(file, "Author: %[^\n]\n", books[bookCount].author);
+            fscanf(file, "ID: %d\n", &books[bookCount].id);
+            fscanf(file, "Count: %d\n", &books[bookCount].count);
+            fscanf(file, "Price: %f\n", &books[bookCount].price);
+            fscanf(file, "Status: %[^\n]\n", books[bookCount].status);
+            bookCount++;
+        }
+        fclose(file);
+    }
+
+    do
+    {
+        if (bookCount >= MAX)
+        {
+            printf(RED "Library is full! Cannot add more books.\n" RESET);
+            break;
+        }
+
+        printf(GREEN "\nEnter details of the new book:\n" RESET);
+
+        printf("Title: ");
+        getchar();
+        fgets(books[bookCount].title, sizeof(books[bookCount].title), stdin);
+        books[bookCount].title[strcspn(books[bookCount].title, "\n")] = '\0';
+
+        printf("Author: ");
+        fgets(books[bookCount].author, sizeof(books[bookCount].author), stdin);
+        books[bookCount].author[strcspn(books[bookCount].author, "\n")] = '\0';
+
+        printf("ID: ");
+        scanf("%d", &books[bookCount].id);
+
+        printf("Count: ");
+        scanf("%d", &books[bookCount].count);
+
+        printf("Price: ");
+        scanf("%f", &books[bookCount].price);
+
+        printf("Status (Available/Issued): ");
+        getchar();
+        fgets(books[bookCount].status, sizeof(books[bookCount].status), stdin);
+        books[bookCount].status[strcspn(books[bookCount].status, "\n")] = '\0';
+
+        bookCount++;
+
+        printf(YELLOW "\nDo you want to add another book? (y/n): " RESET);
+        scanf(" %c", &choice);
+
+    } while (choice == 'y' || choice == 'Y');
+
+    sortBook(books, bookCount);
+
+    file = fopen("books.txt", "w");
+    if (file == NULL)
+    {
+        printf(RED "Error opening file!\n" RESET);
+        exit(1);
+    }
+
+    for (int i = 0; i < bookCount; i++)
+    {
+        fprintf(file, "Title: %s\n", books[i].title);
+        fprintf(file, "Author: %s\n", books[i].author);
+        fprintf(file, "ID: %d\n", books[i].id);
+        fprintf(file, "Count: %d\n", books[i].count);
+        fprintf(file, "Price: %.2f\n", books[i].price);
+        fprintf(file, "Status: %s\n\n", books[i].status);
+    }
+
+    fclose(file);
+    printf(GREEN "\nBooks added successfully!\n" RESET);
+}
+
+void sortBook(struct book books[], int bookCount)
+{
+    struct book temp;
+
+    for (int i = 0; i < bookCount - 1; i++)
+    {
+        for (int j = i + 1; j < bookCount; j++)
+        {
+            if (books[i].id > books[j].id)
+            {
+                temp = books[i];
+                books[i] = books[j];
+                books[j] = temp;
+            }
+        }
+    }
+
+    printf(YELLOW "\nBooks sorted by ID.\n" RESET);
 }

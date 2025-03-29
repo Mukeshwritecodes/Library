@@ -1,3 +1,10 @@
+Title: Jungle Book
+Author: Tarzan
+ID: 21
+Count: 3
+Price: 299.00
+Status: Available
+
 Title: C Programming Basics
 Author: John Smith
 ID: 101
@@ -102,3 +109,4 @@ ID: 115
 Count: 5
 Price: 899.00
 Status: Available
+
