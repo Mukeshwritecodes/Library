@@ -21,13 +21,22 @@ struct book
     char status[20];
 };
 
+struct user
+{
+    char name[50];
+    long long phone;
+    char book[50];
+    int id;
+    char status;
+};
+
 void displayBook();
 void sortBook();
 void addBook();
 void issue_sellBook();
 void returnBook();
 void displayLog();
-void searchBook();
+char searchBook(int);
 void updateWaitingList();
 void displayWaitingList();
 
@@ -330,4 +339,37 @@ void sortBook(struct book books[], int bookCount)
     }
 
     printf(YELLOW "\nBooks sorted by ID.\n" RESET);
+}
+
+void issue_sell()
+{
+    int n;
+    char name;
+    printf("Enter the Number of Book you want to Issue/Sell\n");
+    scanf("%d", &n);
+    struct user users[n];
+    FILE *file;
+    file = fopen("Booklog.txt", "a");
+
+    if (file == NULL)
+    {
+        printf("Error opening file! Make sure 'users.txt' exists.\n");
+        exit(1);
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+
+        printf("Enter the Book Name\n");
+        scanf("%s", name);
+        char status = searchBook(name);
+        if (status == NULL)
+        {
+            printf("Enter a valid Book Name\n");
+            i--;
+        }
+        else
+        {
+        }
+    }
 }
