@@ -1,0 +1,7 @@
+Name: Jungle Book
+Phone: 9321854747
+Book: Jungle Book
+ID: 21
+Price: 299.00
+Status: borrowed(21-12-23)
+
