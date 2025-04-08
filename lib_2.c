@@ -108,7 +108,7 @@ int isQueueEmpty(struct waitingQueue* q) {
 
 void displayBooks() {
     struct book b;
-    FILE *file = fopen("books.txt", "r");
+    FILE *file = fopen("books_2.txt", "r");
     if (file == NULL) {
         printf("Error opening file!\n");
         return;
@@ -131,7 +131,7 @@ void displayBooks() {
 
 void addBook() {
     struct book b;
-    FILE *file = fopen("books.txt", "a");
+    FILE *file = fopen("books_2.txt", "a");
     if (file == NULL) {
         printf("Error opening file!\n");
         return;
@@ -164,7 +164,7 @@ void addBook() {
 
 int searchBook(int id) {
     struct book b;
-    FILE *file = fopen("books.txt", "r");
+    FILE *file = fopen("books_2.txt", "r");
     if (file == NULL) return -1;
     
     while (fscanf(file, "Title: %[^\n]\n", b.title) != EOF) {
@@ -209,10 +209,9 @@ void borrowBook() {
         return;
     }
     
-    // Update book count
     struct book books[100];
     int bookCount = 0;
-    FILE *file = fopen("books.txt", "r");
+    FILE *file = fopen("books_2.txt", "r");
     
     while (fscanf(file, "Title: %[^\n]\n", books[bookCount].title) != EOF) {
         fscanf(file, "Author: %[^\n]\n", books[bookCount].author);
@@ -227,7 +226,7 @@ void borrowBook() {
     }
     fclose(file);
     
-    file = fopen("books.txt", "w");
+    file = fopen("books_2.txt", "w");
     for (int i = 0; i < bookCount; i++) {
         fprintf(file, "Title: %s\nAuthor: %s\nID: %d\nCount: %d\nPrice: %.2f\n\n", 
                 books[i].title, books[i].author, books[i].id, books[i].count, books[i].price);
@@ -249,7 +248,7 @@ void returnBook() {
     
     struct book books[100];
     int bookCount = 0;
-    FILE *file = fopen("books.txt", "r");
+    FILE *file = fopen("books_2.txt", "r");
     
     while (fscanf(file, "Title: %[^\n]\n", books[bookCount].title) != EOF) {
         fscanf(file, "Author: %[^\n]\n", books[bookCount].author);
@@ -264,7 +263,7 @@ void returnBook() {
     }
     fclose(file);
     
-    file = fopen("books.txt", "w");
+    file = fopen("books_2.txt", "w");
     for (int i = 0; i < bookCount; i++) {
         fprintf(file, "Title: %s\nAuthor: %s\nID: %d\nCount: %d\nPrice: %.2f\n\n", 
                 books[i].title, books[i].author, books[i].id, books[i].count, books[i].price);

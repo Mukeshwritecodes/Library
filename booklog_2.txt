@@ -1,0 +1,45 @@
+Name: John Smith
+Phone: 9876543210
+Book: The Great Gatsby
+ID: 101
+Price: 12.99
+Status: Borrowed 04/01/2025 - Due 04/15/2025
+
+Name: Sarah Johnson
+Phone: 8765432109
+Book: To Kill a Mockingbird
+ID: 102
+Price: 15.50
+Status: Purchased 04/02/2025
+
+Name: Mike Wilson
+Phone: 7654321098
+Book: 1984
+ID: 103
+Price: 10.75
+Status: Borrowed 04/03/2025 - Due 04/17/2025
+
+Name: Emma Davis
+Phone: 6543210987
+Book: Pride and Prejudice
+ID: 104
+Price: 9.99
+Status: Borrowed 04/04/2025 - Due 04/18/2025
+
+Name: Alex Brown
+Phone: 5432109876
+Book: The Hobbit
+ID: 106
+Price: 14.50
+Status: Borrowed 04/04/2025 - Due 04/18/2025
+
+Name: John Smith
+Book ID: 101
+Status: Returned
+
+Name: Lisa Anderson
+Phone: 4321098765
+Book: Animal Farm
+ID: 109
+Price: 8.50
+Status: Purchased 04/06/2025
