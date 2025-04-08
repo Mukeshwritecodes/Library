@@ -2,7 +2,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-// Book structure
 struct book {
     char title[50];
     char author[50];
@@ -11,7 +10,6 @@ struct book {
     float price;
 };
 
-// User structure
 struct user {
     char name[50];
     long long int phone;
@@ -20,7 +18,6 @@ struct user {
     char status[20];
 };
 
-// Waiting list queue implementation
 struct waitingNode {
     char name[50];
     long long int phone;
@@ -33,7 +30,6 @@ struct waitingQueue {
     struct waitingNode* rear;
 };
 
-// Function declarations
 void displayBooks();
 void addBook();
 void borrowBook();
@@ -251,7 +247,6 @@ void returnBook() {
         return;
     }
     
-    // Update book count
     struct book books[100];
     int bookCount = 0;
     FILE *file = fopen("books.txt", "r");
