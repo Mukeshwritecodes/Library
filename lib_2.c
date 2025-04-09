@@ -37,9 +37,13 @@ void returnBook();
 int searchBook(int id);
 void updateWaitingList();
 void displayWaitingList();
+
 struct waitingQueue* createQueue();
+
 void enqueue(struct waitingQueue* q, char name[], long long int phone, int bookId);
+
 struct waitingNode* dequeue(struct waitingQueue* q);
+
 int isQueueEmpty(struct waitingQueue* q);
 
 struct waitingQueue* waitingList = NULL;
